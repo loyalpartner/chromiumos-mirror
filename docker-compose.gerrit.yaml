@@ -9,10 +9,10 @@ services:
       - "80:8080"
     volumes:
       - /external/gerrit/etc:/var/gerrit/etc
-      - /external/gerrit/git:/var/gerrit/git
       - /external/gerrit/db:/var/gerrit/db
       - /external/gerrit/index:/var/gerrit/index
       - /external/gerrit/cache:/var/gerrit/cache
+      - /external/gerrit/git:/var/gerrit/git
       - ./plugins:/var/gerrit/plugins
     environment:
       - CANONICAL_WEB_URL=http://gerrit.modousos.com
