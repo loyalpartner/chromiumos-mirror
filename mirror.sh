@@ -10,7 +10,7 @@ function git_clone_or_pull {
   name=$(basename $2)
   if [[ -d "$DIRECTORY" ]]; then
     git -C "$DIRECTORY" remote set-url origin "$URL"
-    git -C "$DIRECTORY" fetch --force --prune 2>&1 | sed "s/^/$name: /"
+    git -C "$DIRECTORY" fetch --force --prune
   else
     git clone --bare "$URL" "$DIRECTORY"
   fi

@@ -6,7 +6,7 @@ services:
     image: gerritcodereview/gerrit
     ports:
       - "29418:29418"
-      - "80:8080"
+      - "8080:8080"
     volumes:
       - /external/gerrit/etc:/var/gerrit/etc
       - /external/gerrit/db:/var/gerrit/db
@@ -15,6 +15,6 @@ services:
       - /external/gerrit/git:/var/gerrit/git
       - ./plugins:/var/gerrit/plugins
     environment:
-      - CANONICAL_WEB_URL=http://gerrit.modousos.com
+      - CANONICAL_WEB_URL=https://chromium-review.modousos.com
     # command: init
 
