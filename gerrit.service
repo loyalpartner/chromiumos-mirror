@@ -1,0 +1,14 @@
+[Unit]
+Description=ChromiumOS mirror
+Requires=docker.service
+After=docker.service
+
+
+[Service]
+Restart=always
+WorkingDirectory=/root/chromiumos-mirror/
+ExecStart=/usr/bin/docker-compose -f docker-compose.gerrit.yaml up
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
